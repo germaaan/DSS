@@ -1,6 +1,6 @@
 # Germán Martínez Maldonado
 
-## Cloud Computing: Fundamentos e Infraestructuras
+## Desarrollo de Sistemas Software Basados en Componentes y Servicios
 
 ### Curso 2015-2016
 
