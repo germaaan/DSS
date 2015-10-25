@@ -1,5 +1,9 @@
+/HolaMundo/target/
 /practica1/target/
 /Practica1-Interceptor/target/
 
-*~
+.netbeans_automatic_build
+*.jar
 *.class
+*.war
+*~
