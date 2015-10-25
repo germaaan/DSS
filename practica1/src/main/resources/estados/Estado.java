@@ -1,5 +1,5 @@
 package estados;
 
-public class Estado {
-    
+public interface Estado{
+  
 }

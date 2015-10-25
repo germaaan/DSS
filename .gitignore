@@ -1,2 +1,5 @@
 /practica1/target/
 /Practica1-Interceptor/target/
+
+*~
+*.class
