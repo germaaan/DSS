@@ -3,6 +3,7 @@
 /Practica1-Interceptor/target/
 
 .netbeans_automatic_build
+nb-configuration.xml
 *.jar
 *.class
 *.war
