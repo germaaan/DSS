@@ -1,18 +1,23 @@
 package estados;
 
-public class MaquinaEstados{
+public class MaquinaEstados {
+
     private Estado estado;
-    
-    public MaquinaEstados(EStado nuevoEstado){
-        estado = nuevoEstado;
+
+    public MaquinaEstados(Estado nuevoEstado) {
+        this.estado = nuevoEstado;
     }
-    
-    public void CambiarEstado(Estado nuevoEstado){
-        estado = nuevoEstado;
+
+    public void cambiarEstado(Estado nuevoEstado) {
+        this.estado = nuevoEstado;
     }
-    
-    public Object getEstado() {
-        return estado;
+
+    public Estado getEstado() {
+        return this.estado;
     }
-    
+
+    public void enviarSenial(int SIGNAL) {
+        this.estado.procesarSenial(this, SIGNAL);
+    }
+
 }

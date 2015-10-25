@@ -1,22 +1,28 @@
-?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
         <title>Simulacion Arranque/Simulacion Motor</title>
     </h:head>
     <h:body>
         <h:form>
-            <h2 style="color: #{ControladorMotor.colorTitulo}">#{ControladorMotor.textoTitulo}</h2>
+            <h2 style="color:black">
+                A
+            </h2>
             <hr/>
-            <h:commandButton id="botonEncender" value="#{ControladorMotor.TextoBotonOnOff}"
-                             actionListener="#{ControladorMotor.actualizarBotonOnOff}" style="color:
-                             #{motorController.colorButton}">
+            <h:commandButton id="botonEncender"
+                             value="#{controladorMotor.textoTitulo}"
+                             style="color:black"
+                             >
             </h:commandButton>
-            <h:commandButton id="botonApagar" value="Acelerar" actionListener="#{ControladorMotor.actualizarBotonAcelerar}"
-                             style="color: #{motorController.colorAccelerate}">
+            <h:commandButton id="botonApagar"
+                             value="Acelerar"
+                             style="color:black"
+                             >
             </h:commandButton>
         </h:form>
     </h:body>
-    
 </html>
