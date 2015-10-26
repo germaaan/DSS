@@ -16,9 +16,7 @@ public class MaquinaEstados {
         return this.estado;
     }
 
-    /*
-     public void enviarSenial(int SIGNAL) {
-     this.estado.procesarSenial(this, SIGNAL);
-     }
-     */
+    public void enviarSenial(int SIGNAL) {
+        this.estado.procesarSenial(this, SIGNAL);
+    }
 }

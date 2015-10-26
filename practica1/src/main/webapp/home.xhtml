@@ -17,6 +17,7 @@
             <h:commandButton id="botonEncender"
                              value="#{controladorMotor.textoBotonOnOff}"
                              style="color:#{controladorMotor.colorBotonOnOff}"
+                             actionListener="#{controladorMotor.actualizarBotonOnOff}" 
                              >
             </h:commandButton>
             <h:commandButton id="botonApagar"

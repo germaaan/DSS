@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.event.ActionEvent;
 
 @ManagedBean(name = "controladorMotor", eager = true)
 @RequestScoped
@@ -27,6 +28,10 @@ public class ControladorMotor implements Serializable {
 
     @ManagedProperty(value = "#{colorBotonAcelerar}")
     private String colorBotonAcelerar;
+
+    public void actualizarBotonOnOff(ActionEvent e) {
+        this.estadoMotor.enviarSenial(Estado.SIGNAL_ON_OFF);
+    }
 
     public String getTextoTitulo() {
         return this.estadoMotor.getEstado().getTextoTitulo();
