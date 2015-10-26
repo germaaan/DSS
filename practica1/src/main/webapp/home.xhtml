@@ -10,18 +10,18 @@
     </h:head>
     <h:body>
         <h:form>
-            <h2 style="color:black">
+            <h2 style="color:#{controladorMotor.colorTitulo}">
                 #{controladorMotor.textoTitulo}
             </h2>
             <hr/>
             <h:commandButton id="botonEncender"
                              value="#{controladorMotor.textoBotonOnOff}"
-                             style="color:black"
+                             style="color:#{controladorMotor.colorBotonOnOff}"
                              >
             </h:commandButton>
             <h:commandButton id="botonApagar"
                              value="Acelerar"
-                             style="color:black"
+                             style="color:#{controladorMotor.colorBotonAcelerar}"
                              >
             </h:commandButton>
         </h:form>
