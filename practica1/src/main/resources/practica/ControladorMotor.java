@@ -1,5 +1,6 @@
 package practica;
 
+import estados.*;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -10,6 +11,7 @@ import javax.faces.bean.RequestScoped;
 public class ControladorMotor implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    private MaquinaEstados estadoMotor = new MaquinaEstados(EstadoApagado.getInstancia());
 
     @ManagedProperty(value = "#{textoTitulo}")
     private String textoTitulo;
@@ -27,23 +29,23 @@ public class ControladorMotor implements Serializable {
     private String colorBotonAcelerar;
 
     public String getTextoTitulo() {
-        return "APAGADO";
+        return this.estadoMotor.getEstado().getTextoTitulo();
     }
 
     public String getTextoBotonOnOff() {
-        return "Encender";
+        return this.estadoMotor.getEstado().getTextoBotonOnOff();
     }
 
     public String getColorTitulo() {
-        return "red";
+        return this.estadoMotor.getEstado().getColorTitulo();
     }
 
     public String getColorBotonOnOff() {
-        return "red";
+        return this.estadoMotor.getEstado().getColorBotonOnOff();
     }
 
     public String getColorBotonAcelerar() {
-        return "black";
+        return this.estadoMotor.getEstado().getColorBotonAcelerar();
     }
 
     public void setTextoTitulo(String textoTitulo) {

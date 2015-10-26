@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package estados;
 
-/**
- *
- * @author germaaan
- */
-public class Estado {
-    
+public interface Estado {
+
+    public static final int SIGNAL_ON_OFF = 0;
+    public static final int SIGNAL_ACELERAR = 1;
+
+    public String getTextoTitulo();
+
+    public String getTextoBotonOnOff();
+
+    public String getColorTitulo();
+
+    public String getColorBotonOnOff();
+
+    public String getColorBotonAcelerar();
+
+    //public boolean procesarSenial(MaquinaEstados maquinaEstados, int senial);
 }
