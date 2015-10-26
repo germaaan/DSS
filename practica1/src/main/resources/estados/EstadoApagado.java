@@ -41,15 +41,14 @@ public class EstadoApagado implements Estado {
         return EstadoApagado.COLOR_BOTON_ACELERAR;
     }
 
-    /*
-     @Override
-     public boolean procesarSenial(MaquinaEstados maquinaEstados, int senial) {
-     if (senial == Estado.SIGNAL_ON_OFF) {
-     maquinaEstados.cambiarEstado(EstadoEncendido.getInstancia());
-     return true;
-     } else {
-     return false;
-     }
-     }
-     */
+    @Override
+    public boolean procesarSenial(MaquinaEstados maquinaEstados, int senial) {
+        if (senial == Estado.SIGNAL_ON_OFF) {
+            maquinaEstados.cambiarEstado(EstadoEncendido.getInstancia());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

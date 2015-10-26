@@ -15,5 +15,5 @@ public interface Estado {
 
     public String getColorBotonAcelerar();
 
-    //public boolean procesarSenial(MaquinaEstados maquinaEstados, int senial);
+    public boolean procesarSenial(MaquinaEstados maquinaEstados, int senial);
 }
