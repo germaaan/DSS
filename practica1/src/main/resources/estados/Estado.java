@@ -2,8 +2,8 @@ package estados;
 
 public interface Estado {
 
-    public static final int SIGNAL_ON_OFF = 0;
-    public static final int SIGNAL_ACELERAR = 1;
+    public static final int SIGNAL_ON_OFF = 2;
+    public static final int SIGNAL_ACELERAR = 3;
     public static final String TITULO_APAGADO = "APAGADO";
     public static final String TITULO_ENCENDIDO = "ENCENDIDO";
     public static final String TITULO_ACELERANDO = "ACELERANDO";

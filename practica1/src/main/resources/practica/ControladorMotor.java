@@ -4,16 +4,16 @@ import estados.*;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 @ManagedBean(name = "controladorMotor", eager = true)
-@RequestScoped
+@SessionScoped
 public class ControladorMotor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private MaquinaEstados estadoMotor = new MaquinaEstados(EstadoApagado.getInstancia());
-
+    
     @ManagedProperty(value = "#{textoTitulo}")
     private String textoTitulo;
 

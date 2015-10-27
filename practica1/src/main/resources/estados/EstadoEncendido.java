@@ -33,7 +33,7 @@ public class EstadoEncendido implements Estado {
 
     @Override
     public String getColorBotonAcelerar() {
-        return Estado.COLOR_AZUL;
+        return Estado.COLOR_VERDE;
     }
 
     @Override

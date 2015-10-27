@@ -23,17 +23,17 @@ public class EstadoAcelerando implements Estado {
 
     @Override
     public String getColorTitulo() {
-        return Estado.COLOR_ROJO;
-    }
-
-    @Override
-    public String getColorBotonOnOff() {
         return Estado.COLOR_VERDE;
     }
 
     @Override
-    public String getColorBotonAcelerar() {
+    public String getColorBotonOnOff() {
         return Estado.COLOR_ROJO;
+    }
+
+    @Override
+    public String getColorBotonAcelerar() {
+        return Estado.COLOR_VERDE;
     }
 
     @Override
