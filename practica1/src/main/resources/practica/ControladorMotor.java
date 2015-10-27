@@ -33,6 +33,10 @@ public class ControladorMotor implements Serializable {
         this.estadoMotor.enviarSenial(Estado.SIGNAL_ON_OFF);
     }
 
+    public void actualizarBotonAcelerar(ActionEvent e) {
+        this.estadoMotor.enviarSenial(Estado.SIGNAL_ACELERAR);
+    }
+
     public String getTextoTitulo() {
         return this.estadoMotor.getEstado().getTextoTitulo();
     }

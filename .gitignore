@@ -8,3 +8,4 @@ nb-configuration.xml
 *.class
 *.war
 *~
+/practica1-Interceptor/target/

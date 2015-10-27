@@ -3,11 +3,6 @@ package estados;
 public class EstadoApagado implements Estado {
 
     private static EstadoApagado instancia = new EstadoApagado();
-    private static final String TEXTO_TITULO = "APAGADO";
-    private static final String TEXTO_BOTON_ON_OFF = "Encender";
-    private static final String COLOR_TITULO = "red";
-    private static final String COLOR_BOTON_ON_OFF = "blue";
-    private static final String COLOR_BOTON_ACELERAR = "black";
 
     private EstadoApagado() {
     }
@@ -18,27 +13,27 @@ public class EstadoApagado implements Estado {
 
     @Override
     public String getTextoTitulo() {
-        return EstadoApagado.TEXTO_TITULO;
+        return Estado.TITULO_APAGADO;
     }
 
     @Override
     public String getTextoBotonOnOff() {
-        return EstadoApagado.TEXTO_BOTON_ON_OFF;
+        return Estado.TEXTO_ENCENDER;
     }
 
     @Override
     public String getColorTitulo() {
-        return EstadoApagado.COLOR_TITULO;
+        return Estado.COLOR_ROJO;
     }
 
     @Override
     public String getColorBotonOnOff() {
-        return EstadoApagado.COLOR_BOTON_ON_OFF;
+        return Estado.COLOR_AZUL;
     }
 
     @Override
     public String getColorBotonAcelerar() {
-        return EstadoApagado.COLOR_BOTON_ACELERAR;
+        return Estado.COLOR_NEGRO;
     }
 
     @Override

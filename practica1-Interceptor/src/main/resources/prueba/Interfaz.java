@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 
 public class Interfaz {
 
-    private String url = "http://localhost:8080/practica1/home.xhtml";
+    private String url = "http://localhost:8080/Practica1/home.xhtml";
 
     public void ejecutar(double peticion) throws IOException, URISyntaxException {
         System.out.println("Llamada a la interfaz");

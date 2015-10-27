@@ -14,15 +14,16 @@
                 #{controladorMotor.textoTitulo}
             </h2>
             <hr/>
-            <h:commandButton id="botonEncender"
+            <h:commandButton id="botonOnOff"
                              value="#{controladorMotor.textoBotonOnOff}"
                              style="color:#{controladorMotor.colorBotonOnOff}"
                              actionListener="#{controladorMotor.actualizarBotonOnOff}" 
                              >
             </h:commandButton>
-            <h:commandButton id="botonApagar"
+            <h:commandButton id="botonAcelerar"
                              value="Acelerar"
                              style="color:#{controladorMotor.colorBotonAcelerar}"
+                             actionListener="#{controladorMotor.actualizarBotonAcelerar}" 
                              >
             </h:commandButton>
         </h:form>
