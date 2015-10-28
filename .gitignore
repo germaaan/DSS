@@ -9,3 +9,8 @@ nb-configuration.xml
 *.war
 *~
 /practica1-Interceptor/target/
+/Practica1Interceptor/nbproject/private/
+/Practica01Inteceptor/nbproject/private/
+/Practica01/target/
+/Practica01Inteceptor/dist/
+/Practica01Inteceptor/build/
