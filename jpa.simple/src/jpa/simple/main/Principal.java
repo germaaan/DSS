@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import jpa.simple.modelo.Completo;
 
 public class Principal {
-	private static final String PERSISTENCE_UNIT_NAME = "tutorialJPA";
+	private static final String PERSISTENCE_UNIT_NAME = "Completos";
 	private static EntityManagerFactory factoria;
 
 	public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Principal {
 			System.out.println(completo);
 		}
 		// Ahora imprimimos el numero de registros que tiene ya la base de datos
-		System.out.println("Tamano: " + listaCompleto.size());
+		System.out.println("Tamaño: " + listaCompleto.size());
 
 		// Ahora vamos a trabajar con una transaccion en la base de datos
 		em.getTransaction().begin();

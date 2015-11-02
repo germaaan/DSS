@@ -3,13 +3,15 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
-	<persistence-unit name="Completos"
+	<persistence-unit name="relaciones_persistentes"
 		transaction-type="RESOURCE_LOCAL">
-		<class>jpa.simple.modelo.Completo</class>
+		<class>jpa.eclipselink.modelo.Persona</class>
+		<class>jpa.eclipselink.modelo.Familia</class>
+		<class>jpa.eclipselink.modelo.Empleo</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:derby:/home/germaaan/db-derby/bin/basesDatos/simpleBD;create=true" />
+				value="jdbc:derby:/home/germaaan/db-derby/bin/basesDatos/eclipselinkBD;create=true" />
 			<property name="javax.persistence.jdbc.user" value="prueba" />
 			<property name="javax.persistence.jdbc.password" value="prueba" />
 
