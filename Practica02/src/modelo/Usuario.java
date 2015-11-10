@@ -22,19 +22,23 @@ public class Usuario implements Serializable {
 
 	// Para construir un usuario vacío
 	public Usuario() {
-
+		this.nombre = "";
+		this.apellido = "";
+		this.email = "";
 	}
 
 	public Usuario(Usuario us) {
-
+		this.nombre = us.getNombre();
+		this.apellido = us.getApellido();
+		this.email = us.getEmail();
 	}
 
 	public long getId() {
-		return 1;
+		return this.getId();
 	}
 
 	public void setId(long id) {
-
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -42,23 +46,23 @@ public class Usuario implements Serializable {
 	}
 
 	public void setNombre(String nombre) {
-
+		this.nombre = nombre;
 	}
 
 	public String getApellido() {
-		return null;
+		return this.apellido;
 	}
 
 	public void setApellido(String apellido) {
-
+		this.apellido = apellido;
 	}
 
 	public String getEmail() {
-		return null;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
-
+		this.email = email;
 	}
 
 	@Override
