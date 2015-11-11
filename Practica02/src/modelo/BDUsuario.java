@@ -2,47 +2,114 @@ package modelo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
+//import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
+//import javax.persistence.TypedQuery;
 import javax.persistence.Persistence;
 
 import java.util.List;
 
-import modelo.Usuario; // Quitar
+//import modelo.Usuario;
 
 public class BDUsuario {
 	private static final String PERSISTENCE_UNIT_NAME = "usuario";
 	private static EntityManagerFactory factoria = Persistence
 			.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 
-	// Insertar un usuario; si ya existe, no tiene efecto.
 	public static void insertar(Usuario usuario) {
+		EntityManager em = factoria.createEntityManager();
 
+		if (!existeEmail(usuario.getEmail())) {
+			em.getTransaction().begin();
+
+			em.persist(usuario);
+
+			em.getTransaction().commit();
+			em.close();
+		}
 	}
 
-	// Actualizar los datos de un usuario en la base de datos
 	public static void actualizar(Usuario usuario) {
+		EntityManager em = factoria.createEntityManager();
 
+		if (existeEmail(usuario.getEmail())) {
+			Query q = em.createQuery(
+					"SELECT u from Usuario u WHERE u.email LIKE :email")
+					.setParameter("email", usuario.getEmail());
+
+			Usuario anterior = (Usuario) q.getSingleResult();
+
+			em.getTransaction().begin();
+
+			anterior.setNombre(usuario.getNombre());
+			anterior.setApellido(usuario.getApellido());
+
+			em.getTransaction().commit();
+			em.close();
+		}
 	}
 
-	// Eliminar un usuario de la base de datos
 	public static void eliminar(Usuario usuario) {
+		EntityManager em = factoria.createEntityManager();
 
+		if (existeEmail(usuario.getEmail())) {
+			em.getTransaction().begin();
+			Query q = em.createQuery(
+					"SELECT u from Usuario u WHERE u.email LIKE :email")
+					.setParameter("email", usuario.getEmail());
+
+			Usuario borrado = (Usuario) q.getSingleResult();
+
+			em.remove(borrado);
+			em.getTransaction().commit();
+			em.close();
+		}
 	}
 
-	// Recuperar un usuario desde la base de datos
 	public static Usuario seleccionarUsuario(String email) {
-		return null;
+		EntityManager em = factoria.createEntityManager();
+		Usuario usuario = null;
+
+		if (existeEmail(email)) {
+			Query q = em.createQuery(
+					"SELECT u from Usuario u WHERE u.email LIKE :email")
+					.setParameter("email", email);
+
+			usuario = (Usuario) q.getSingleResult();
+
+			em.close();
+		}
+
+		return usuario;
 	}
 
-	// Comprobar que existe el usuario cuyo email pasamos como argumento
 	public static boolean existeEmail(String email) {
-		return false;
+		EntityManager em = factoria.createEntityManager();
+		Query q = em.createQuery(
+				"SELECT u from Usuario u WHERE u.email LIKE :email")
+				.setParameter("email", email);
+
+		try {
+			q.getSingleResult();
+			return true;
+		} catch (NoResultException e) {
+			return false;
+		} finally {
+			em.close();
+		}
 	}
 
-	// Listar los usuarios de la base de datos
-	public static List<Usuario> seleccionarTodosUsuarios() {
-		return null;
+	public static List<Usuario> listarUsuarios() {
+		EntityManager em = factoria.createEntityManager();
+		Query q = em.createQuery("SELECT u from Usuario u");
+
+		@SuppressWarnings("unchecked")
+		List<Usuario> listaUsuarios = q.getResultList();
+
+		em.close();
+
+		return listaUsuarios;
 	}
+
 }
