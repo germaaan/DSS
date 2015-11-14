@@ -10,3 +10,4 @@ Practica02/build
 *.log
 *.war
 *~
+/WebApplication1/nbproject/private/
