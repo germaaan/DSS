@@ -39,7 +39,7 @@ public class Usuario implements Serializable {
 	}
 
 	public String getNombre() {
-		return null;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {

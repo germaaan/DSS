@@ -1,7 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -50,6 +49,12 @@ public class JPATest {
 	}
 
 	@Test
+	public void seleccionarUsuario() {
+		Usuario usuario = BDUsuario.seleccionarUsuario(email);
+		assertNotNull(usuario);
+	}
+
+	@Test
 	public void insertar() {
 		Usuario usuario = new Usuario();
 		usuario.setNombre(this.nombre + " 2");
@@ -61,30 +66,24 @@ public class JPATest {
 		assertTrue(BDUsuario.existeEmail(email2));
 	}
 
-	// @Test
-	// public void seleccionarUsuario() {
-	// Usuario usuario = BDUsuario.seleccionarUsuario(email2);
-	// assertNotNull(usuario);
-	// }
-
 	@Test
 	public void existeEmail() {
 		assertTrue(BDUsuario.existeEmail(email2));
 	}
 
-	// @Test
-	// public void actualizar() {
-	// Usuario usuario = new Usuario();
-	// usuario.setNombre(this.nombre + " 3");
-	// usuario.setApellido(this.apellido + " 3");
-	// usuario.setEmail(email2);
-	//
-	// BDUsuario.actualizar(usuario);
-	//
-	// usuario = BDUsuario.seleccionarUsuario(email2);
-	// assertEquals(usuario.getNombre(), this.nombre + " 3");
-	// assertEquals(usuario.getApellido(), this.apellido + " 3");
-	// }
+	@Test
+	public void actualizar() {
+		Usuario usuario = new Usuario();
+		usuario.setNombre(this.nombre + " 3");
+		usuario.setApellido(this.apellido + " 3");
+		usuario.setEmail(email);
+
+		BDUsuario.actualizar(usuario);
+
+		usuario = BDUsuario.seleccionarUsuario(email);
+		assertEquals(usuario.getNombre(), this.nombre + " 3");
+		assertEquals(usuario.getApellido(), this.apellido + " 3");
+	}
 
 	@Test
 	public void eliminar() {
