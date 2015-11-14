@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.BDUsuario;
 import modelo.Usuario;
 
-import java.awt.List;
 import java.io.IOException;
 
 public class ListaCorreosServlet extends HttpServlet {
@@ -17,8 +16,7 @@ public class ListaCorreosServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("usuarios", BDUsuario.listarUsuarios());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		doPost(request, response);
 	};
 
 	protected void doPost(HttpServletRequest request,
@@ -32,13 +30,12 @@ public class ListaCorreosServlet extends HttpServlet {
 			usuario.setNombre(nombre);
 			usuario.setApellido(apellido);
 			usuario.setEmail(email);
-			
 			System.out.println(usuario.toString());
 
 			BDUsuario.insertar(usuario);
 		}
 
-		request.setAttribute("usuarios", BDUsuario.listarUsuarios());
+		// request.setAttribute("usuarios", BDUsuario.listarUsuarios());
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }

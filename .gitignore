@@ -1,18 +1,12 @@
-/HolaMundo/target/
-/practica1/target/
-/Practica1-Interceptor/target/
+HolaMundo/target
+Practica01/target
+jpa.eclipselink/bin
+jpa.simple/bin
+Practica02/build
 
-.netbeans_automatic_build
-nb-configuration.xml
-*.jar
 *.class
+*.jar
+*.jdbc
+*.log
 *.war
 *~
-/practica1-Interceptor/target/
-/Practica1Interceptor/nbproject/private/
-/Practica01Inteceptor/nbproject/private/
-/Practica01/target/
-/Practica01Inteceptor/dist/
-/Practica01Inteceptor/build/
-/jpa.simple/nbproject/private/
-/jpa.simple/build

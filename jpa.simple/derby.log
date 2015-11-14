@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Thu Nov 05 19:12:48 CET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0150-d8d9-dee4-000005ce0d18 
-on database directory /home/germaaan/db-derby/bin/basesDatos/simpleBD with class loader sun.misc.Launcher$AppClassLoader@10b28f30 
+Sat Nov 14 13:08:29 CET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-05e5-90cb-000005b9d378 
+on database directory /home/germaaan/db-derby/bin/basesDatos/simpleBD with class loader sun.misc.Launcher$AppClassLoader@3ad6a0e0 
 Loaded from file:/home/germaaan/proyectos/DSS/jpa.simple/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_80-b15
