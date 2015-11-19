@@ -13,8 +13,6 @@ import modelo.Usuario;
 import org.junit.Before;
 import org.junit.Test;
 
-// Limpiar base de datos después
-
 public class JPATest {
 	private static final String PERSISTENCE_UNIT_NAME = "usuario";
 	private EntityManagerFactory factoria;
@@ -23,6 +21,7 @@ public class JPATest {
 	private String email = "germaaan@gmail.com";
 	private String email2 = "germaaan@hotmail.com";
 
+	// Inicialización con un usuario de prueba
 	@Before
 	public void setUp() throws Exception {
 		factoria = Persistence
@@ -48,12 +47,14 @@ public class JPATest {
 		}
 	}
 
+	// Selección de usuario mediante su email
 	@Test
 	public void seleccionarUsuario() {
 		Usuario usuario = BDUsuario.seleccionarUsuario(email);
 		assertNotNull(usuario);
 	}
 
+	// Inserción de usuario mediante su nombre, apellido y email
 	@Test
 	public void insertar() {
 		Usuario usuario = new Usuario();
@@ -66,11 +67,13 @@ public class JPATest {
 		assertTrue(BDUsuario.existeEmail(email2));
 	}
 
+	// Comprobación de existencia de usuario mediante su email
 	@Test
 	public void existeEmail() {
 		assertTrue(BDUsuario.existeEmail(email2));
 	}
 
+	// Actualización de usuario mediante su nombre, apellido y email
 	@Test
 	public void actualizar() {
 		Usuario usuario = new Usuario();
@@ -85,6 +88,7 @@ public class JPATest {
 		assertEquals(usuario.getApellido(), this.apellido + " 3");
 	}
 
+	// Eliminación de usuario mediante su email
 	@Test
 	public void eliminar() {
 		Usuario usuario = new Usuario();

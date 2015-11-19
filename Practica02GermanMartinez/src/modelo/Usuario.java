@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	// Variables de la entidad
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
@@ -18,18 +19,21 @@ public class Usuario implements Serializable {
 	private String apellido;
 	private String email;
 
+	// Constructor por defecto
 	public Usuario() {
 		this.nombre = "";
 		this.apellido = "";
 		this.email = "";
 	}
 
+	// Constructor mediante el paso como parámetro de otro usuario
 	public Usuario(Usuario us) {
 		this.nombre = us.getNombre();
 		this.apellido = us.getApellido();
 		this.email = us.getEmail();
 	}
 
+	// Métodos para obtener y modificar las variables
 	public long getId() {
 		return this.getId();
 	}
@@ -62,6 +66,7 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
+	// Método para obtener una cadena con la información del usuario
 	@Override
 	public String toString() {
 		return this.nombre + " " + this.apellido + "" + this.email;

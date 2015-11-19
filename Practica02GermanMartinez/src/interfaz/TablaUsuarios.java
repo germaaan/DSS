@@ -34,7 +34,7 @@ public class TablaUsuarios extends AbstractTableModel {
 		return true;
 	}
 
-	// Para a�adir un usuario a la tabla
+	// Para añadir un usuario a la tabla
 	public void add(Usuario usuario) {
 		lista.add(usuario);
 		fireTableDataChanged();
