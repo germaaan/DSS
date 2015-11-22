@@ -2,7 +2,7 @@ HolaMundo/target
 Practica01/target
 jpa.eclipselink/bin
 jpa.simple/bin
-Practica02GermanMartinez/build
+Practica02/build
 
 *.class
 *.jar
