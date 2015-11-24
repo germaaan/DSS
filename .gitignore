@@ -3,6 +3,7 @@ Practica01/target
 jpa.eclipselink/bin
 jpa.simple/bin
 Practica02/build
+jaxb/bin
 
 *.class
 *.jar
