@@ -4,6 +4,7 @@ jpa.eclipselink/bin
 jpa.simple/bin
 Practica02/build
 jaxb/bin
+mio.jersey.primero/build
 
 *.class
 *.jar
