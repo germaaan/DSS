@@ -20,7 +20,6 @@ public class Coche {
 	private float precio;
 
 	public Coche() {
-
 	}
 
 	public Coche(String id, String marca, String modelo, int anio,
