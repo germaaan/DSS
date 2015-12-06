@@ -1,4 +1,4 @@
-package recursos;
+package recurso;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
