@@ -32,7 +32,7 @@ public class CochesRecurso {
 	}
 
 	@GET
-	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(MediaType.APPLICATION_XML)
 	public List<Coche> getCoches() {
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		listaCoches.addAll(CocheDao.INSTANCE.getCoches().values());
@@ -47,6 +47,13 @@ public class CochesRecurso {
 		listaCoches.addAll(CocheDao.INSTANCE.getCoches().values());
 
 		return listaCoches;
+	}
+
+	@GET
+	@Path("numCoches")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getCount() {
+		return Integer.toString(CocheDao.INSTANCE.getCoches().size());
 	}
 
 	@POST

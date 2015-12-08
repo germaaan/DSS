@@ -9,14 +9,14 @@ public enum CocheDao {
 	private Map<String, Coche> coches = new HashMap<String, Coche>();
 
 	private CocheDao() {
-		Coche coche = new Coche("1", "Seat", "Ibiza", 2015, 3, 192, 235,
-				Coche.GASOLEO, 5, 21400);
+		Coche coche = new Coche("1", "Seat", "Leon", 2013, 3, 110, 194,
+				Coche.DIESEL, 5, 24620);
 		coches.put("1", coche);
-		coche = new Coche("2", "Volkswagen", "Golf", 2015, 3, 300, 250,
-				Coche.GASOLEO, 5, 43050);
+		coche = new Coche("2", "Volkswagen", "Golf", 2012, 3, 300, 250,
+				Coche.GASOLINA, 5, 40885);
 		coches.put("2", coche);
-		coche = new Coche("3", "BMW", "Serie 1", 2015, 3, 326, 250,
-				Coche.GASOLEO, 5, 44750);
+		coche = new Coche("3", "BMW", "Serie 3", 2012, 3, 431, 250,
+				Coche.GASOLINA, 5, 89900);
 		coches.put("3", coche);
 	}
 

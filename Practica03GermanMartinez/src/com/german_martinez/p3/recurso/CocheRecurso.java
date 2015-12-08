@@ -32,7 +32,7 @@ public class CocheRecurso {
 	}
 
 	@GET
-	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(MediaType.APPLICATION_XML)
 	public Coche getCoche() {
 		Coche coche = CocheDao.INSTANCE.getCoches().get(id);
 

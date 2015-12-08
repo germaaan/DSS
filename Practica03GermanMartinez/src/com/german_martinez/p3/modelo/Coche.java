@@ -4,8 +4,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Coche {
-	public final static int GASOLEO = 1;
-	public final static int GASOIL = 2;
+	public final static int GASOLINA = 1;
+	public final static int DIESEL = 2;
 	public final static int HIBRIDO = 3;
 	public final static int ELECTRICO = 4;
 	private String id;
