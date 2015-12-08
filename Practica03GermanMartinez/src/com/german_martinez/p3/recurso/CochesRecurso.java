@@ -1,4 +1,4 @@
-package recurso;
+package com.german_martinez.p3.recurso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
-import modelo.Coche;
-import modelo.CocheDao;
+import com.german_martinez.p3.modelo.Coche;
+import com.german_martinez.p3.modelo.CocheDao;
 
 @Path("/coches")
 public class CochesRecurso {

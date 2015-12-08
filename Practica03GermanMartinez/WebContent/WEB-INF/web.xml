@@ -6,19 +6,13 @@
 	<display-name>Practica 03 German Martinez</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
 	<servlet>
 		<servlet-name>Practica 03 German Martinez</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>modelo</param-value>
+			<param-value>com.german_martinez.p3.recurso</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

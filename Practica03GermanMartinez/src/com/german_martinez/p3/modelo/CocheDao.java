@@ -1,4 +1,4 @@
-package modelo;
+package com.german_martinez.p3.modelo;
 
 import java.util.HashMap;
 import java.util.Map;
