@@ -32,8 +32,8 @@ public class CocheRecurso {
 	}
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
-	public Coche getCoche() {
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public Coche getXML() {
 		Coche coche = CocheDao.INSTANCE.getCoches().get(id);
 
 		if (coche == null) {
@@ -46,8 +46,8 @@ public class CocheRecurso {
 	}
 
 	@GET
-	@Produces(MediaType.TEXT_XML)
-	public Coche getCocheHTML() {
+	@Produces({ MediaType.TEXT_XML })
+	public Coche getHTML() {
 		Coche coche = CocheDao.INSTANCE.getCoches().get(id);
 
 		if (coche == null) {

@@ -117,4 +117,44 @@ public class Coche {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
+
+	public String toHTML() {
+		String values = "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>"
+				+ "<h3>Características:</h3><ul>"
+				+ "<li><strong>ID: </strong>"
+				+ this.id
+				+ "</li><li><strong>Marca: </strong>"
+				+ this.marca
+				+ "</li><li><strong>Modelo: </strong>"
+				+ this.modelo
+				+ "</li><li><strong>Año: </strong>"
+				+ this.anio
+				+ "</li><li><strong>Número de puertas: </strong>"
+				+ this.numPuertas
+				+ "</li><li><strong>Potencia: </strong>"
+				+ this.potencia
+				+ "</li><li><strong>Velocidad máxima: </strong>"
+				+ this.maxVelocidad + "</li>";
+
+		switch (this.combustible) {
+		case Coche.GASOLINA:
+			values += "<li><strong>Combustible: </strong>Gasolina</li>";
+			break;
+		case Coche.DIESEL:
+			values += "<li><strong>Combustible: </strong>Diésel</li>";
+			break;
+		case Coche.HIBRIDO:
+			values += "<li><strong>Combustible: </strong>Híbrido</li>";
+			break;
+		case Coche.ELECTRICO:
+			values += "<li><strong>Combustible: </strong>Eléctrico</li>";
+			break;
+		}
+
+		values += "<li><strong>Número de plazas: </strong>" + this.numPlazas
+				+ "</li><li><strong>Precio: </strong>" + this.precio
+				+ "</li></ul>";
+
+		return values;
+	}
 }

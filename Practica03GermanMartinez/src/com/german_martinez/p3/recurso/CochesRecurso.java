@@ -26,7 +26,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
 
-import com.german_martinez.p3.cliente.Cliente;
 import com.german_martinez.p3.modelo.Coche;
 import com.german_martinez.p3.modelo.CocheDao;
 
@@ -40,12 +39,16 @@ public class CochesRecurso {
 	@Context
 	ServletContext contexto;
 
+	private String pathSeat = "/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/seat_leon.jpg";
+	private String pathVW = "/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/vw_golf.jpg";
+	private String pathBMW = "/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/bmw_serie3.jpg";
+
 	public CochesRecurso() {
 	}
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
-	public List<Coche> getCoches() {
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public List<Coche> getXML() {
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		listaCoches.addAll(CocheDao.INSTANCE.getCoches().values());
 
@@ -53,8 +56,8 @@ public class CochesRecurso {
 	}
 
 	@GET
-	@Produces(MediaType.TEXT_XML)
-	public List<Coche> getCochesAsHtml() {
+	@Produces({ MediaType.TEXT_XML })
+	public List<Coche> getHTML() {
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		listaCoches.addAll(CocheDao.INSTANCE.getCoches().values());
 
@@ -69,26 +72,108 @@ public class CochesRecurso {
 	}
 
 	@GET
-	@Path("/imagen")
+	@Path("/carseat")
+	@Produces({ MediaType.TEXT_HTML })
+	public String getCarSeat() {
+		return CocheDao.INSTANCE.getCoches().get("1").toHTML()
+				+ "<img src='/Practica03GermanMartinez/img/seat_leon.jpg'"
+				+ " width=1200 height=667 alt='Seat Leon'></body></html>";
+	}
+
+	@GET
+	@Path("/carvw")
+	@Produces({ MediaType.TEXT_HTML })
+	public String getCarVW() {
+		return CocheDao.INSTANCE.getCoches().get("2").toHTML()
+				+ "<img src='/Practica03GermanMartinez/img/vw_golf.jpg'"
+				+ " width=1200 height=667 alt='Volkswagen Golf'></body></html>";
+	}
+
+	@GET
+	@Path("/carbmw")
+	@Produces({ MediaType.TEXT_HTML })
+	public String getCarBMW() {
+		return CocheDao.INSTANCE.getCoches().get("3").toHTML()
+				+ "<img src='/Practica03GermanMartinez/img/bmw_serie3.jpg'"
+				+ " width=1200 height=667 alt='BMW Serie 3'></body></html>";
+	}
+
+	@GET
+	@Path("/imgseat")
 	@Produces("image/jpg")
-	public Response getImage() {
-		File filePath = new File(
-				"/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/bmw_serie3.jpg");
+	public Response getSeat() {
+		File imgSeat = new File(pathSeat);
 		BufferedImage image = null;
 		ByteArrayOutputStream baos = null;
 		byte[] imageData = null;
 
 		try {
-			image = ImageIO.read(filePath);
+			image = ImageIO.read(imgSeat);
 
 			baos = new ByteArrayOutputStream();
 
-			ImageIO.write(image, "png", baos);
+			ImageIO.write(image, "jpg", baos);
 			imageData = baos.toByteArray();
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 
-			ResponseBuilder responseBuilder = Response.ok((Object) filePath);
+			ResponseBuilder responseBuilder = Response.ok((Object) imgSeat);
+			responseBuilder.header("Content-Disposition",
+					"attachment; filename=\"seat_leon.jpg\"");
+			return responseBuilder.build();
+		}
+
+		return Response.ok(new ByteArrayInputStream(imageData)).build();
+	}
+
+	@GET
+	@Path("/imgvw")
+	@Produces("image/jpg")
+	public Response getVW() {
+		File imgVW = new File(pathVW);
+		BufferedImage image = null;
+		ByteArrayOutputStream baos = null;
+		byte[] imageData = null;
+
+		try {
+			image = ImageIO.read(imgVW);
+
+			baos = new ByteArrayOutputStream();
+
+			ImageIO.write(image, "jpg", baos);
+			imageData = baos.toByteArray();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+
+			ResponseBuilder responseBuilder = Response.ok((Object) imgVW);
+			responseBuilder.header("Content-Disposition",
+					"attachment; filename=\"vw-golf.jpg\"");
+			return responseBuilder.build();
+		}
+
+		return Response.ok(new ByteArrayInputStream(imageData)).build();
+	}
+
+	@GET
+	@Path("/imgbmw")
+	@Produces("image/jpg")
+	public Response getBMW() {
+		File imgBMW = new File(pathBMW);
+		BufferedImage image = null;
+		ByteArrayOutputStream baos = null;
+		byte[] imageData = null;
+
+		try {
+			image = ImageIO.read(imgBMW);
+
+			baos = new ByteArrayOutputStream();
+
+			ImageIO.write(image, "jpg", baos);
+			imageData = baos.toByteArray();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+
+			ResponseBuilder responseBuilder = Response.ok((Object) imgBMW);
 			responseBuilder.header("Content-Disposition",
 					"attachment; filename=\"bmw_serie3.jpg\"");
 			return responseBuilder.build();
