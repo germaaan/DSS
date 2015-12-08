@@ -14,6 +14,7 @@ import javax.ws.rs.core.UriBuilder;
 import org.glassfish.jersey.client.ClientConfig;
 
 import com.german_martinez.p3.modelo.Coche;
+import com.german_martinez.p3.modelo.CocheDao;
 
 /*
  * Cliente para comprobar las funcionalidades CRUD del cliente RESTful
@@ -25,7 +26,7 @@ public class Cliente {
 		WebTarget service = client.target(getBaseURI());
 
 		// Listamos los coches
-		System.out.println("Texto XML con el listado de todos los coches:");
+		System.out.println("Texto con el listado de todos los coches:");
 		System.out.println(service.path("rest").path("coches").request()
 				.accept(MediaType.TEXT_XML).get(String.class));
 
@@ -68,7 +69,7 @@ public class Cliente {
 		// Leer un coche (READ)
 		// Obtenemos el coche con el ID igual a 4
 		System.out.println("\nCoche leido (READ).");
-		System.out.println("\nInformación del coche con ID=4:");
+		System.out.println("Información del coche con ID=4:");
 		System.out.println(service.path("rest").path("coches/4").request()
 				.accept(MediaType.APPLICATION_XML).get(String.class));
 
