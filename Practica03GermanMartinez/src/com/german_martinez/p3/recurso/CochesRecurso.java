@@ -1,9 +1,11 @@
 package com.german_martinez.p3.recurso;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -16,8 +18,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
 
+import com.german_martinez.p3.cliente.Cliente;
 import com.german_martinez.p3.modelo.Coche;
 import com.german_martinez.p3.modelo.CocheDao;
 
@@ -28,6 +33,8 @@ public class CochesRecurso {
 	UriInfo uriInfo;
 	@Context
 	Request peticion;
+	@Context
+	ServletContext contexto;
 
 	public CochesRecurso() {
 	}
@@ -51,10 +58,23 @@ public class CochesRecurso {
 	}
 
 	@GET
-	@Path("numCoches")
+	@Path("/count")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getCount() {
 		return Integer.toString(CocheDao.INSTANCE.getCoches().size());
+	}
+
+	@GET
+	@Path("/imagen")
+	@Produces("image/jpg")
+	public Response getImage() {
+		File file = new File(
+				"/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/bmw_serie3.jpg");
+
+		ResponseBuilder responseBuilder = Response.ok((Object) file);
+		responseBuilder.header("Content-Disposition",
+				"attachment; filename=\"bmw_serie3.jpg\"");
+		return responseBuilder.build();
 	}
 
 	@POST
@@ -98,7 +118,7 @@ public class CochesRecurso {
 
 		CocheDao.INSTANCE.getCoches().put(coche.getId(), coche);
 
-		servletResponse.sendRedirect("./coches/");
+		servletResponse.sendRedirect("../../index.html");
 	}
 
 	@Path("{coche}")
