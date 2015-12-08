@@ -49,13 +49,6 @@ public class CochesRecurso {
 		return listaCoches;
 	}
 
-	@GET
-	@Path("count")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String getCount() {
-		return String.valueOf(CocheDao.INSTANCE.getCoches().size());
-	}
-
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
