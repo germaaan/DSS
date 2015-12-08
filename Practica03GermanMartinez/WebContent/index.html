@@ -10,12 +10,27 @@
 		<li><a href="rest/coches">Mapa de elementos</a></li>
 		<li><a href="rest/coches/numCoches">Contador elementos</a></li>
 	</ul>
-	<h2>Menú catálogo de coches</h2>
-	<ul>
-		<li><a href="crearCoches.html">Crear coches</a></li>
-		<li><a href="leerCoches.html">Leer coches</a></li>
-		<li><a href="actualizarCoches.html">Actualizar coches</a></li>
-		<li><a href="borrarCoches.html">Borrar coches</a></li>
-	</ul>
+	<h2>Crear coches</h2>
+	<form action="rest/coches" method="POST">
+		ID coche: <input name="id" /> <br> Marca: <input name="marca" />
+		<br> Modelo: <input name="modelo" /> <br> Año: <input
+			name="anio" /> <br> Número de puertas: <select
+			name="numPuertas">
+			<option value="3">3</option>
+			<option value="5">5</option>
+		</select> <br> Potencia: <input name="potencia" /> <br> Velocidad
+		máxima: <input name="maxVelocidad" /> <br> Combustible: <select
+			name="combustible">
+			<option value="1">Gasóleo</option>
+			<option value="2">Gasoil</option>
+			<option value="3">Híbrido</option>
+			<option value="4">Eléctrico</option>
+		</select> <br> Número de plazas: <select name="numPlazas">
+			<option value="2">2</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select> <br> Precio: <input name="precio" /> <br> <input
+			type="submit" value="Crear" />
+	</form>
 </body>
 </html>
