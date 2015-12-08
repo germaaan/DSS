@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -60,6 +61,28 @@ public class CochesRecurso {
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public void createCoche(@FormParam("id") String id,
+			@FormParam("marca") String marca,
+			@FormParam("modelo") String modelo, @FormParam("anio") int anio,
+			@FormParam("numPuertas") int numPuertas,
+			@FormParam("potencia") int potencia,
+			@FormParam("maxVelocidad") int maxVelocidad,
+			@FormParam("combustible") int combustible,
+			@FormParam("numPlazas") int numPlazas,
+			@FormParam("precio") float precio,
+			@Context HttpServletResponse servletResponse) throws IOException {
+
+		Coche coche = new Coche(id, marca, modelo, anio, numPuertas, potencia,
+				maxVelocidad, combustible, numPlazas, precio);
+
+		CocheDao.INSTANCE.getCoches().put(coche.getId(), coche);
+
+		servletResponse.sendRedirect("./coches/");
+	}
+
+	@PUT
+	@Produces(MediaType.TEXT_HTML)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public void updateCoche(@FormParam("id") String id,
 			@FormParam("marca") String marca,
 			@FormParam("modelo") String modelo, @FormParam("anio") int anio,
 			@FormParam("numPuertas") int numPuertas,
