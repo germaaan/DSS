@@ -1,10 +1,14 @@
 package com.german_martinez.p3.recurso;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
@@ -68,13 +72,29 @@ public class CochesRecurso {
 	@Path("/imagen")
 	@Produces("image/jpg")
 	public Response getImage() {
-		File file = new File(
+		File filePath = new File(
 				"/home/germaaan/proyectos/DSS/Practica03GermanMartinez/WebContent/img/bmw_serie3.jpg");
+		BufferedImage image = null;
+		ByteArrayOutputStream baos = null;
+		byte[] imageData = null;
 
-		ResponseBuilder responseBuilder = Response.ok((Object) file);
-		responseBuilder.header("Content-Disposition",
-				"attachment; filename=\"bmw_serie3.jpg\"");
-		return responseBuilder.build();
+		try {
+			image = ImageIO.read(filePath);
+
+			baos = new ByteArrayOutputStream();
+
+			ImageIO.write(image, "png", baos);
+			imageData = baos.toByteArray();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+
+			ResponseBuilder responseBuilder = Response.ok((Object) filePath);
+			responseBuilder.header("Content-Disposition",
+					"attachment; filename=\"bmw_serie3.jpg\"");
+			return responseBuilder.build();
+		}
+
+		return Response.ok(new ByteArrayInputStream(imageData)).build();
 	}
 
 	@POST
