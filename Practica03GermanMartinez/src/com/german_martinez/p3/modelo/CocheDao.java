@@ -10,13 +10,13 @@ public enum CocheDao {
 
 	private CocheDao() {
 		Coche coche = new Coche("1", "Seat", "Ibiza", 2015, 3, 192, 235,
-				Coche.GASOLINA, 5, 21400);
+				Coche.GASOLEO, 5, 21400);
 		coches.put("1", coche);
 		coche = new Coche("2", "Volkswagen", "Golf", 2015, 3, 300, 250,
-				Coche.GASOLINA, 5, 43050);
+				Coche.GASOLEO, 5, 43050);
 		coches.put("2", coche);
 		coche = new Coche("3", "BMW", "Serie 1", 2015, 3, 326, 250,
-				Coche.GASOLINA, 5, 44750);
+				Coche.GASOLEO, 5, 44750);
 		coches.put("3", coche);
 	}
 
