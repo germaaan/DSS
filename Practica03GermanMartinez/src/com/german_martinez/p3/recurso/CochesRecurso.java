@@ -76,11 +76,7 @@ public class CochesRecurso {
 	@Produces({ MediaType.TEXT_HTML })
 	public String getCarSeat() {
 		return CocheDao.INSTANCE.getCoches().get("1").toHTML()
-				+ "<img src='/Practica03GermanMartinez/img/seat_leon.jpg'"
-				+ " width=1200 height=667 alt='Seat Leon'><audio controls>"
-				+ "<source src='/Practica03GermanMartinez/sound/sonidoSeat.mp3'"
-				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
-				+ "</audio></body></html>";
+				+ "<tr><td><strong>SONIDO</strong></td><td><audio controls><source src='/Practica03GermanMartinez/sound/sonidoSeat.mp3'type='audio/mpeg'>Este navegador no soporta elementos de audio.</audio></td></tr><tr><td></td><td></td></tr><tr><td><strong>IMAGEN</strong></td><td><img src='/Practica03GermanMartinez/img/seat_leon.jpg'width=600 height=333 alt='Seat Leon'></td></tr></tbody></table></div></div></body>";
 	}
 
 	@GET
@@ -88,11 +84,7 @@ public class CochesRecurso {
 	@Produces({ MediaType.TEXT_HTML })
 	public String getCarVW() {
 		return CocheDao.INSTANCE.getCoches().get("2").toHTML()
-				+ "<img src='/Practica03GermanMartinez/img/vw_golf.jpg'"
-				+ " width=1200 height=667 alt='Volkswagen Golf'><audio controls>"
-				+ "<source src='/Practica03GermanMartinez/sound/sonidoVW.mp3'"
-				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
-				+ "</audio></body></html>";
+				+ "<tr><td><strong>SONIDO</strong></td><td><audio controls><source src='/Practica03GermanMartinez/sound/sonidoVW.mp3'type='audio/mpeg'>Este navegador no soporta elementos de audio.</audio></td></tr><tr><td></td><td></td></tr><tr><td><strong>IMAGEN</strong></td><td><img src='/Practica03GermanMartinez/img/vw_golf.jpg'width=600 height=333 alt='Volkswagen Golf'></td></tr></tbody></table></div></div></body>";
 	}
 
 	@GET
@@ -100,11 +92,7 @@ public class CochesRecurso {
 	@Produces({ MediaType.TEXT_HTML })
 	public String getCarBMW() {
 		return CocheDao.INSTANCE.getCoches().get("3").toHTML()
-				+ "<img src='/Practica03GermanMartinez/img/bmw_serie3.jpg'"
-				+ " width=1200 height=667 alt='BMW Serie 3'><audio controls>"
-				+ "<source src='/Practica03GermanMartinez/sound/sonidoBMW.mp3'"
-				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
-				+ "</audio></body></html>";
+				+ "<tr><td><strong>SONIDO</strong></td><td><audio controls><source src='/Practica03GermanMartinez/sound/sonidoBMW.mp3'type='audio/mpeg'>Este navegador no soporta elementos de audio.</audio></td></tr><tr><td></td><td></td></tr><tr><td><strong>IMAGEN</strong></td><td><img src='/Practica03GermanMartinez/img/bmw_serie3.jpg'width=600 height=333 alt='BMW Serie 3'></td></tr></tbody></table></div></div></body>";
 	}
 
 	@GET

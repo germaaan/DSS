@@ -119,41 +119,39 @@ public class Coche {
 	}
 
 	public String toHTML() {
-		String values = "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>"
-				+ "<h3>Características:</h3><ul>"
-				+ "<li><strong>ID: </strong>"
+		String values = "<!DOCTYPE html><html><head><meta charset='utf-8' /><meta name='viewport' content='width=device-width, initial-scale=1' /><meta name='description' content='DSS: Práctica 3' /><meta name='author' content='Germán Martínez Maldonado' /><title>Características</title><link rel='stylesheet'href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'></head><body><nav class='navbar navbar-inverse navbar-fixed-top'><div class='container'><div class='navbar-header'><button type='button' data-toggle='collapse' data-target='#navbar'aria-expanded='false' aria-controls='navbar'class='navbar-toggle collapsed'><span class='sr-only'>Toggle navigation</span><spanclass='icon-bar'> </span> <span class='icon-bar'></span><spanclass='icon-bar'> </span> <span class='icon-bar'></span><spanclass='icon-bar'> </span></button></div><div id='navbar' class='collapse navbar-collapse'><ul class='nav navbar-nav'><li><a href='../../index.html'>Inicio</a></li><li><a href='../../rest/coches'>Mapa de elementos</a></li><li><a href='../../rest/coches/count'>Contador elementos</a></li><li><a href='../../catalogo.html'>Catálogo de coches</a></li></ul></div></div></nav><div class='container'><div class='starter-template'><h2 style='padding-top: 50px; text-align: center'>Características</h2><table id='tareas' class='table table-hover text-center'><thead><tr><th class='col-sm-1 text-center'>Propiedad</th><th class='col-sm-1 text-center'>Valor</th></tr></thead><tbody><tr><td>ID</td><td>"
 				+ this.id
-				+ "</li><li><strong>Marca: </strong>"
+				+ "</td></tr><tr><td>Marca</td><td>"
 				+ this.marca
-				+ "</li><li><strong>Modelo: </strong>"
+				+ "</td></tr><tr><td>Modelo</td><td>"
 				+ this.modelo
-				+ "</li><li><strong>Año: </strong>"
+				+ "</td></tr><tr><td>Año</td><td>"
 				+ this.anio
-				+ "</li><li><strong>Número de puertas: </strong>"
+				+ "</td></tr><tr><td>Número de puertas</td><td>"
 				+ this.numPuertas
-				+ "</li><li><strong>Potencia: </strong>"
+				+ "</td></tr><tr><td>Potencia</td><td>"
 				+ this.potencia
-				+ "</li><li><strong>Velocidad máxima: </strong>"
-				+ this.maxVelocidad + "</li>";
+				+ "</td></tr><tr><td>Velocidad máxima</td><td>"
+				+ this.maxVelocidad + "</td></tr><tr><td>Combustible</td><td>";
 
 		switch (this.combustible) {
 		case Coche.GASOLINA:
-			values += "<li><strong>Combustible: </strong>Gasolina</li>";
+			values += "Gasolina";
 			break;
 		case Coche.DIESEL:
-			values += "<li><strong>Combustible: </strong>Diésel</li>";
+			values += "Diésel";
 			break;
 		case Coche.HIBRIDO:
-			values += "<li><strong>Combustible: </strong>Híbrido</li>";
+			values += "Híbrido";
 			break;
 		case Coche.ELECTRICO:
-			values += "<li><strong>Combustible: </strong>Eléctrico</li>";
+			values += "Eléctrico";
 			break;
 		}
 
-		values += "<li><strong>Número de plazas: </strong>" + this.numPlazas
-				+ "</li><li><strong>Precio: </strong>" + this.precio
-				+ "</li></ul>";
+		values += "</td></tr><tr><td>Número de plazas</td><td>"
+				+ this.numPlazas + "</td></tr><tr><td>Precio</td><td>"
+				+ this.precio + "</td></tr><tr><td></td><td></td></tr>";
 
 		return values;
 	}
