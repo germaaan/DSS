@@ -77,7 +77,10 @@ public class CochesRecurso {
 	public String getCarSeat() {
 		return CocheDao.INSTANCE.getCoches().get("1").toHTML()
 				+ "<img src='/Practica03GermanMartinez/img/seat_leon.jpg'"
-				+ " width=1200 height=667 alt='Seat Leon'></body></html>";
+				+ " width=1200 height=667 alt='Seat Leon'><audio controls>"
+				+ "<source src='/Practica03GermanMartinez/sound/sonidoSeat.mp3'"
+				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
+				+ "</audio></body></html>";
 	}
 
 	@GET
@@ -86,7 +89,10 @@ public class CochesRecurso {
 	public String getCarVW() {
 		return CocheDao.INSTANCE.getCoches().get("2").toHTML()
 				+ "<img src='/Practica03GermanMartinez/img/vw_golf.jpg'"
-				+ " width=1200 height=667 alt='Volkswagen Golf'></body></html>";
+				+ " width=1200 height=667 alt='Volkswagen Golf'><audio controls>"
+				+ "<source src='/Practica03GermanMartinez/sound/sonidoVW.mp3'"
+				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
+				+ "</audio></body></html>";
 	}
 
 	@GET
@@ -95,7 +101,10 @@ public class CochesRecurso {
 	public String getCarBMW() {
 		return CocheDao.INSTANCE.getCoches().get("3").toHTML()
 				+ "<img src='/Practica03GermanMartinez/img/bmw_serie3.jpg'"
-				+ " width=1200 height=667 alt='BMW Serie 3'></body></html>";
+				+ " width=1200 height=667 alt='BMW Serie 3'><audio controls>"
+				+ "<source src='/Practica03GermanMartinez/sound/sonidoBMW.mp3'"
+				+ "type='audio/mpeg'> Este navegador no soporta elementos de audio."
+				+ "</audio></body></html>";
 	}
 
 	@GET
