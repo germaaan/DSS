@@ -6,10 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="DSS: Práctica 3" />
 <meta name="author" content="Germán Martínez Maldonado" />
-<link rel="icon" href="favicon/favicon.ico" />
+<title>Catálogo de coches</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<title>Práctica 3 DSS - Germán Martínez Maldonado</title>
 </head>
 
 <body>
@@ -36,28 +35,36 @@
 			</div>
 		</div>
 	</nav>
-	<h2 style="padding-top: 50px;">Crear coches</h2>
-	<form action="
-		rest/coches" method="POST">
-		ID coche: <input name="id" /> <br> Marca: <input name="marca" />
-		<br> Modelo: <input name="modelo" /> <br> Año: <input
-			name="anio" /> <br> Número de puertas: <select
-			name="numPuertas">
-			<option value="3">3</option>
-			<option value="5">5</option>
-		</select> <br> Potencia: <input name="potencia" /> <br> Velocidad
-		máxima: <input name="maxVelocidad" /> <br> Combustible: <select
-			name="combustible">
-			<option value="1">Gasóleo</option>
-			<option value="2">Gasoil</option>
-			<option value="3">Híbrido</option>
-			<option value="4">Eléctrico</option>
-		</select> <br> Número de plazas: <select name="numPlazas">
-			<option value="2">2</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select> <br> Precio: <input name="precio" /> <br> <input
-			type="submit" value="Crear" />
-	</form>
+	<div class="container">
+		<div class="starter-template">
+			<h2 style="padding-top: 50px; text-align: center">Catálogo de
+				coches</h2>
+			<table id="tareas" class="table table-hover text-center">
+				<thead>
+					<tr>
+						<th class="col-sm-1 text-center">Coche</th>
+						<th class="col-sm-1 text-center">Características</th>
+						<th class="col-sm-1 text-center">Imagen</th>
+					</tr>
+				<tbody>
+					<tr>
+						<td>Seat Leon</td>
+						<td><a href="rest/coches/carseat">Enlace</a></td>
+						<td><a href="rest/coches/imgseat">Enlace</a></td>
+					</tr>
+					<tr>
+						<td>Volkswagen Golf</td>
+						<td><a href="rest/coches/carvw">Enlace</a></td>
+						<td><a href="rest/coches/imgvw">Enlace</a></td>
+					</tr>
+					<tr>
+						<td>BMW Serie 3</td>
+						<td><a href="rest/coches/carbmw">Enlace</a></td>
+						<td><a href="rest/coches/imgbmw">Enlace</a></td>
+					</tr>
+				</tbody>
+				</thead>
+			</table>
+		</div>
+	</div>
 </body>
-</html>
