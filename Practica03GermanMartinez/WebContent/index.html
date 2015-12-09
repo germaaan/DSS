@@ -31,33 +31,102 @@
 					<li><a href="rest/coches">Mapa de elementos</a></li>
 					<li><a href="rest/coches/count">Contador elementos</a></li>
 					<li><a href="catalogo.html">Catálogo de coches</a></li>
-					<li><a href="formulario.html">Formulario creación</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<h2 style="padding-top: 50px;">Crear coches</h2>
-	<form action="
-		rest/coches" method="POST">
-		ID coche: <input name="id" /> <br> Marca: <input name="marca" />
-		<br> Modelo: <input name="modelo" /> <br> Año: <input
-			name="anio" /> <br> Número de puertas: <select
-			name="numPuertas">
-			<option value="3">3</option>
-			<option value="5">5</option>
-		</select> <br> Potencia: <input name="potencia" /> <br> Velocidad
-		máxima: <input name="maxVelocidad" /> <br> Combustible: <select
-			name="combustible">
-			<option value="1">Gasóleo</option>
-			<option value="2">Gasoil</option>
-			<option value="3">Híbrido</option>
-			<option value="4">Eléctrico</option>
-		</select> <br> Número de plazas: <select name="numPlazas">
-			<option value="2">2</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select> <br> Precio: <input name="precio" /> <br> <input
-			type="submit" value="Crear" />
+	<h2 style="padding-top: 50px; padding-left: 50px;">Formulario de
+		inserción de coches</h2>
+	<form class="form-horizontal" role="form" action="rest/coches"
+		method="post">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="id">ID:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="id" id="id"
+					placeholder="Código identficador">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="marca">Marca:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="marca" id="marca"
+					placeholder="Nombre del fabricante">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="modelo">Modelo:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="modelo" id="modelo"
+					placeholder="Versión, edición, serie...">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="anio">Año:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="anio" id="anio"
+					placeholder="Año del modelo">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="numPuertas">Número
+				de puertas:</label>
+			<div class="col-sm-3">
+				<select class="form-control" name="numPuertas" id="numPuertas">
+					<option value="3">3</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="potencia">Potencia:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="potencia"
+					id="potencia" placeholder="Número de caballos">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="maxVelocidad">Velocidad
+				máxima:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="maxVelocidad"
+					id="maxVelocidad" placeholder="Máxima velocidad alcanzable">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="combustible">Combustible:</label>
+			<div class="col-sm-3">
+				<select class="form-control" name="combustible" id="combustible">
+					<option value="1">Gasóleo</option>
+					<option value="2">Gasoil</option>
+					<option value="3">Híbrido</option>
+					<option value="4">Eléctrico</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="numPlazas">Número
+				de plazas:</label>
+			<div class="col-sm-3">
+				<select class="form-control" name="numPlazas" id="numPlazas">
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="precio">Precio:</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" name="precio" id="precio"
+					placeholder="Importe del coste">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default" name="crear"
+					id="crear">Crear</button>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
